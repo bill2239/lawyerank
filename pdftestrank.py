@@ -35,8 +35,6 @@ def convert_pdf_to_txt(path):
     return text
 
 
-
-#print convert_pdf_to_txt("./decrypted_testresult.pdf")
 def id2dict(path):
     #result=convert_pdf_to_txt("./decrypted_testresult.pdf")
     result=convert_pdf_to_txt(path)
@@ -78,8 +76,12 @@ def id2dict(path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    rankdir,total=id2dict("./decrypted_testresult.pdf")
-    #print rankdir[u"30630280"]
     parser.add_argument('--id', type=int, help='test id')
+    parser.add_argument('--path', type=str, help='test result pdf path')
     args = parser.parse_args()
+    rankdir,total=id2dict(args.path)
+    #rankdir,total=id2dict("./decrypted_testresult.pdf")
+    #print rankdir[u"30630280"]
+    
+   
     print "id: %d rank %d out of %d in this test" %(args.id,rankdir[unicode(args.id)],total)
