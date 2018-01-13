@@ -10,3 +10,7 @@ To run this code, you will have to provide the test id(准考證號碼) as well:
 ```bash
 python pdftestrank.py --id=your id  --path= pdf path
 ```
+or run the bash script run.sh
+```bash
+./run.sh your_ID
+```
